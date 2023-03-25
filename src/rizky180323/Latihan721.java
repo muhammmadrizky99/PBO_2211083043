@@ -18,7 +18,7 @@ public class Latihan721 {
         
         try {
             for (int i = 0; i < numbers.length; i++) {
-                System.out.print("Masukkan nomor ke-" + (i+1) + ": ");
+                System.out.print("Masukkan angka ke-" + (i+1) + ": ");
                 numbers[i] = Integer.parseInt(br.readLine());
                 
                 if (numbers[i] > max) {
@@ -26,7 +26,7 @@ public class Latihan721 {
                 }
             }
             
-            System.out.println("Nomor terbesar yang Anda masukkan adalah " + max);
+            System.out.println("Angka terbesar yang kamu masukkan adalah " + max);
             
         } catch (IOException e) {
             System.out.println("Terjadi kesalahan dalam membaca input!");

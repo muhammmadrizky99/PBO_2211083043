@@ -8,7 +8,7 @@ package rizky180323;
  *
  * @author ASUS
  */
-public class Latihan71 {
+public class Latihan711 {
     public static void main(String[] args) {
         // Inisialisasi array dengan 7 hari dalam seminggu  
             String days[] = {
