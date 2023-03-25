@@ -22,6 +22,6 @@ public class Latihan3 {
         System.out.println("number 1 = " + a);
         System.out.println("number 2 = " + b);
         System.out.println("number 3 = " + c);
-        System.out.println("average is = " + max);
+        System.out.println("Nilai tertinggi = " + max);
     }
 }
