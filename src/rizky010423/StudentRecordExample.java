@@ -39,7 +39,6 @@ public class StudentRecordExample {
         System.out.println("Math grade    : " + anna.getMathGrade());
         System.out.println("English grade : " + anna.getEnglishGrade());
         System.out.println("Science grade : " + anna.getScienceGrade());
-        System.out.println("Math grade    : " + anna.getMathGrade());
         System.out.println("Average       : " +anna.getAverage());
         System.out.println("Nilai huruf   : " +anna.NilaiHuruf());
         
