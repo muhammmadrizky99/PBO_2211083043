@@ -16,6 +16,7 @@ public class StudentRecord {
     private double englishGrade; 
     private double scienceGrade; 
     private double average;
+    private char NilaiHuruf;
 
     private static int studentCount; //class variable
     
@@ -101,18 +102,38 @@ public class StudentRecord {
         return studentCount;
     }
 
-    
-           
     public void print( String temp ){ 
-        System.out.println("Name :" + name); 
-        System.out.println("Address :" + address); 
-        System.out.println("Age :" + age); 
+        System.out.println("Name          : " + name); 
+        System.out.println("Address       : " + address); 
+        System.out.println("Age           : " + age); 
     } 
     public void print(double eGrade, double mGrade, double sGrade) {
-        System.out.println("Name :" + name); 
-        System.out.println("Math Grade :" + mGrade); 
-        System.out.println("English Grade :" + eGrade); 
-        System.out.println("Science Grade :" + sGrade); 
+        System.out.println("Name          : " + name); 
+        System.out.println("Math Grade    : " + mGrade); 
+        mathGrade = mGrade;
+        System.out.println("English Grade : " + eGrade);
+        englishGrade = eGrade;
+        System.out.println("Science Grade : " + sGrade); 
+        scienceGrade = sGrade;
+        System.out.println("Average       : "+ getAverage());
+        System.out.println("Nilai huruf   : "+ NilaiHuruf());
+        
+    }
+    
+    public char NilaiHuruf(){
+        
+        if (getAverage() > 80) {
+            NilaiHuruf = 'A';
+        } else if (getAverage() > 65) {
+            NilaiHuruf = 'B';
+        } else if (getAverage() > 55) {
+            NilaiHuruf = 'C';
+        } else if (getAverage() > 40) {
+            NilaiHuruf = 'D';
+        } else if (getAverage() > 0 ) {
+            NilaiHuruf = 'E';
+        }
+        return NilaiHuruf;
     }
 }
 
