@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package rizky080423;
-
+//latihan 11 nomor 1
 /**
  *
  * @author ASUS
