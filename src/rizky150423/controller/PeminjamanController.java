@@ -6,6 +6,8 @@ package rizky150423.controller;
 import rizky150423.view.FormPeminjaman;
 import rizky150423.model.*;
 import javax.swing.table.DefaultTableModel;
+import java.util.*;
+
 /**
  *
  * @author ASUS
@@ -15,22 +17,43 @@ public class PeminjamanController {
     private PeminjamanDao peminjamanDao;
     private Peminjaman peminjaman;
     
+    private AnggotaDao anggotaDao;
+    private BukuDao bukuDao;
+    
     public PeminjamanController (FormPeminjaman formPeminjaman){
         this.formPeminjaman = formPeminjaman;
         peminjamanDao = new PeminjamanDaoImpl();
+        anggotaDao = new AnggotaDaoImpl();
+        bukuDao = new BukuDaoImp1();
     }
     
     public void bersihForm(){
-        formPeminjaman.getTxtNobp().setText("");
-        formPeminjaman.getTxtKodebuku().setText("");
         formPeminjaman.getTxtTglpinjam().setText("");
         formPeminjaman.getTxtTglkembali().setText("");
     }
     
+    public void isiCombo(){
+        List<Anggota> listAnggota = anggotaDao.getAll();
+        List<Buku> listBuku = bukuDao.getAll();
+        formPeminjaman.getCboAnggota().removeAllItems();
+        formPeminjaman.getCboBuku().removeAllItems();
+        
+        //isi anggota
+        for (Anggota anggota : listAnggota){
+            formPeminjaman.getCboAnggota().addItem(anggota.getNobp());
+        }
+        for (Buku buku : listBuku){
+            formPeminjaman.getCboBuku().addItem(buku.getKodeBuku());
+        }
+        
+    }
+    
     public void savePeminjaman(){
         peminjaman = new Peminjaman();
-        peminjaman.setNobp(formPeminjaman.getTxtNobp().getText());
-        peminjaman.setKodebuku(formPeminjaman.getTxtKodebuku().getText());
+        peminjaman.setAnggota(
+    anggotaDao.getAnggota(formPeminjaman.getCboAnggota().getSelectedIndex()));
+        peminjaman.setBuku(
+    bukuDao.getBuku(formPeminjaman.getCboBuku().getSelectedIndex()));
         peminjaman.setTglpinjam(formPeminjaman.getTxtTglpinjam().getText());
         peminjaman.setTglkembali(formPeminjaman.getTxtTglkembali().getText());
         peminjamanDao.save(peminjaman);
@@ -42,8 +65,10 @@ public class PeminjamanController {
         int index = formPeminjaman.getTblPeminjaman().getSelectedRow();
         peminjaman = peminjamanDao.getPeminjaman(index);
         if(peminjaman != null){
-            formPeminjaman.getTxtNobp().setText(peminjaman.getNobp());
-            formPeminjaman.getTxtKodebuku().setText(peminjaman.getKodebuku());
+            formPeminjaman.getCboAnggota()
+                    .setSelectedItem(peminjaman.getAnggota().getNobp());
+            formPeminjaman.getCboBuku()
+                    .setSelectedItem(peminjaman.getBuku().getKodeBuku());
             formPeminjaman.getTxtTglpinjam().setText(peminjaman.getTglpinjam());
             formPeminjaman.getTxtTglkembali().setText(peminjaman.getTglkembali());                
         }
@@ -51,8 +76,10 @@ public class PeminjamanController {
     
     public void updatePeminjaman(){
         int index = formPeminjaman.getTblPeminjaman().getSelectedRow();
-        peminjaman.setNobp(formPeminjaman.getTxtNobp().getText());
-        peminjaman.setKodebuku(formPeminjaman.getTxtKodebuku().getText());
+       peminjaman.setAnggota(
+    anggotaDao.getAnggota(formPeminjaman.getCboAnggota().getSelectedIndex()));
+        peminjaman.setBuku(
+    bukuDao.getBuku(formPeminjaman.getCboBuku().getSelectedIndex()));
         peminjaman.setTglpinjam(formPeminjaman.getTxtTglpinjam().getText());
         peminjaman.setTglkembali(formPeminjaman.getTxtTglkembali().getText());
         peminjamanDao.update(index, peminjaman);
@@ -74,8 +101,9 @@ public class PeminjamanController {
         java.util.List<Peminjaman> list = peminjamanDao.getAll();
         for(Peminjaman peminjaman : list){
             Object[] data = {
-                peminjaman.getNobp(),
-                peminjaman.getKodebuku(),
+                peminjaman.getAnggota().getNobp(),
+                peminjaman.getAnggota().getNama(),
+                peminjaman.getBuku().getKodeBuku(),
                 peminjaman.getTglpinjam(),
                 peminjaman.getTglkembali()
                     

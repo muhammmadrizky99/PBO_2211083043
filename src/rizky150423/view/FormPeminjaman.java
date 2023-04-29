@@ -18,16 +18,17 @@ public class FormPeminjaman extends javax.swing.JFrame {
         initComponents();
         controller = new PeminjamanController(this);
         controller.bersihForm();
+        controller.isiCombo();
         controller.tampilData();
         
     }
     
-    public javax.swing.JTextField getTxtNobp(){
-        return txtNobp;
+    public javax.swing.JComboBox getCboAnggota(){
+        return cboAnggota;
     }
     
-    public javax.swing.JTextField getTxtKodebuku(){
-        return txtKodebuku;
+    public javax.swing.JComboBox getCboBuku(){
+        return cboBuku;
     }
     
     public javax.swing.JTextField getTxtTglpinjam(){
@@ -52,9 +53,7 @@ public class FormPeminjaman extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        txtNobp = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        txtKodebuku = new javax.swing.JTextField();
         txtTglpinjam = new javax.swing.JTextField();
         txtTglkembali = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -66,28 +65,22 @@ public class FormPeminjaman extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         TblPeminjaman = new javax.swing.JTable();
+        cboAnggota = new javax.swing.JComboBox<>();
+        cboBuku = new javax.swing.JComboBox<>();
 
         getContentPane().setLayout(null);
-
-        txtNobp.setText("jTextField1");
-        getContentPane().add(txtNobp);
-        txtNobp.setBounds(151, 6, 311, 28);
 
         jLabel1.setText("NoBP");
         getContentPane().add(jLabel1);
         jLabel1.setBounds(6, 12, 30, 16);
 
-        txtKodebuku.setText("jTextField2");
-        getContentPane().add(txtKodebuku);
-        txtKodebuku.setBounds(151, 40, 311, 28);
-
         txtTglpinjam.setText("jTextField3");
         getContentPane().add(txtTglpinjam);
-        txtTglpinjam.setBounds(151, 74, 311, 28);
+        txtTglpinjam.setBounds(151, 74, 311, 22);
 
         txtTglkembali.setText("jTextField4");
         getContentPane().add(txtTglkembali);
-        txtTglkembali.setBounds(151, 108, 311, 28);
+        txtTglkembali.setBounds(151, 108, 311, 22);
 
         jLabel2.setText("Kode Buku");
         getContentPane().add(jLabel2);
@@ -95,11 +88,11 @@ public class FormPeminjaman extends javax.swing.JFrame {
 
         jLabel3.setText("Tgl Peminjaman");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(6, 80, 85, 16);
+        jLabel3.setBounds(6, 80, 86, 16);
 
         jLabel4.setText("Tgl Pengembalian");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(6, 114, 94, 16);
+        jLabel4.setBounds(6, 114, 96, 16);
 
         jButton1.setText("Insert");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -108,7 +101,7 @@ public class FormPeminjaman extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(6, 148, 57, 28);
+        jButton1.setBounds(6, 148, 72, 23);
 
         jButton2.setText("Update");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -117,7 +110,7 @@ public class FormPeminjaman extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(124, 148, 65, 28);
+        jButton2.setBounds(124, 148, 72, 23);
 
         jButton3.setText("Delete");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -126,7 +119,7 @@ public class FormPeminjaman extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton3);
-        jButton3.setBounds(212, 148, 62, 28);
+        jButton3.setBounds(212, 148, 72, 23);
 
         jButton4.setText("Cancel");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -135,21 +128,21 @@ public class FormPeminjaman extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton4);
-        jButton4.setBounds(337, 148, 65, 28);
+        jButton4.setBounds(337, 148, 72, 23);
 
         TblPeminjaman.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "NoBP", "Kode buku", "Tgl peminjaman", "Tgl kembali"
+                "NoBP", "Nama", "Kode buku", "Tgl peminjaman", "Tgl kembali"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -164,7 +157,15 @@ public class FormPeminjaman extends javax.swing.JFrame {
         jScrollPane1.setViewportView(TblPeminjaman);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(6, 207, 456, 406);
+        jScrollPane1.setBounds(6, 207, 452, 220);
+
+        cboAnggota.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        getContentPane().add(cboAnggota);
+        cboAnggota.setBounds(150, 10, 310, 22);
+
+        cboBuku.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        getContentPane().add(cboBuku);
+        cboBuku.setBounds(150, 40, 310, 22);
 
         setSize(new java.awt.Dimension(482, 678));
         setLocationRelativeTo(null);
@@ -235,6 +236,8 @@ public class FormPeminjaman extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable TblPeminjaman;
+    private javax.swing.JComboBox<String> cboAnggota;
+    private javax.swing.JComboBox<String> cboBuku;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -244,8 +247,6 @@ public class FormPeminjaman extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField txtKodebuku;
-    private javax.swing.JTextField txtNobp;
     private javax.swing.JTextField txtTglkembali;
     private javax.swing.JTextField txtTglpinjam;
     // End of variables declaration//GEN-END:variables
