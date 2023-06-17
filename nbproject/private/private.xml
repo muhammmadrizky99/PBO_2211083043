@@ -5,6 +5,7 @@
         <group>
             <file>file:/D:/PBOmuhammad%20rizky/PBO_2211083043/src/rizky150423/model/PeminjamanDaoImpl.java</file>
             <file>file:/D:/PBOmuhammad%20rizky/PBO_2211083043/src/rizky150423/model/Pengembalian.java</file>
+            <file>file:/D:/PBOmuhammad%20rizky/PBO_2211083043/src/rizky/dao/AnggotaDao.java</file>
             <file>file:/D:/PBOmuhammad%20rizky/PBO_2211083043/src/rizky130423/MyInteger.java</file>
             <file>file:/D:/PBOmuhammad%20rizky/PBO_2211083043/src/rizky160323/Latihan633.java</file>
             <file>file:/D:/PBOmuhammad%20rizky/PBO_2211083043/src/rizky080423/Student.java</file>
@@ -18,10 +19,13 @@
             <file>file:/D:/PBOmuhammad%20rizky/PBO_2211083043/src/rizky150423/model/Peminjaman.java</file>
             <file>file:/D:/PBOmuhammad%20rizky/PBO_2211083043/src/rizky150423/view/FormPeminjaman.java</file>
             <file>file:/D:/PBOmuhammad%20rizky/PBO_2211083043/src/uts_B/view/FormPegawai.java</file>
+            <file>file:/D:/PBOmuhammad%20rizky/PBO_2211083043/src/rizky/db/DbHelper.java</file>
             <file>file:/D:/PBOmuhammad%20rizky/PBO_2211083043/src/rizky080423/Kuda.java</file>
             <file>file:/D:/PBOmuhammad%20rizky/PBO_2211083043/src/rizky080423/Person.java</file>
+            <file>file:/D:/PBOmuhammad%20rizky/PBO_2211083043/src/rizky/model/Anggota.java</file>
             <file>file:/D:/PBOmuhammad%20rizky/PBO_2211083043/src/rizky160323/Latihan632.java</file>
             <file>file:/D:/PBOmuhammad%20rizky/PBO_2211083043/src/uts_B/model/Pegawai.java</file>
+            <file>file:/D:/PBOmuhammad%20rizky/PBO_2211083043/src/rizky/dao/AnggotaDaoImpl.java</file>
             <file>file:/D:/PBOmuhammad%20rizky/PBO_2211083043/src/rizky080423/Circle.java</file>
             <file>file:/D:/PBOmuhammad%20rizky/PBO_2211083043/src/uts_B/model/PegawaiDao.java</file>
             <file>file:/D:/PBOmuhammad%20rizky/PBO_2211083043/src/rizky080423/Shape.java</file>
