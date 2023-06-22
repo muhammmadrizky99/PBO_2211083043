@@ -78,20 +78,21 @@ public class AnggotaController {
         
     }
     
-    public void update(){
-        try {
-            String kode = view.getTxtKodeAnggota().getText();
-            anggota = new Anggota();
-            anggota.setKodeanggota(view.getTxtKodeAnggota().getText());
-            anggota.setNamaanggota(view.getTxtNamaAnggota().getText());
-            anggota.setAlamat(view.getTxtAlamat().getText());
-            anggota.setJeniskelamin(view.getCboJenisKelamin().getSelectedItem().toString());
-            dao.update(kode, anggota);
-            JOptionPane.showMessageDialog(view, "Update Data OK");
-        } catch (Exception e) {
-            JOptionPane.showConfirmDialog(view, e);
-        }
+    public void update() {
+    try {
+        String kode = view.getTxtKodeAnggota().getText();
+        Anggota anggota = new Anggota();
+        anggota.setKodeanggota(view.getTxtKodeAnggota().getText());
+        anggota.setNamaanggota(view.getTxtNamaAnggota().getText());
+        anggota.setAlamat(view.getTxtAlamat().getText());
+        anggota.setJeniskelamin(view.getCboJenisKelamin().getSelectedItem().toString());
+        dao.update(kode, anggota);
+        JOptionPane.showMessageDialog(view, "Update Data OK");
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(view, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
     }
+}
+
     
     public void getAnggota(){
         try {

@@ -103,11 +103,11 @@ public class FormAnggota extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtKodeAnggota);
-        txtKodeAnggota.setBounds(100, 10, 310, 22);
+        txtKodeAnggota.setBounds(100, 10, 400, 22);
 
         txtNamaAnggota.setText("jTextField2");
         getContentPane().add(txtNamaAnggota);
-        txtNamaAnggota.setBounds(100, 40, 290, 22);
+        txtNamaAnggota.setBounds(100, 40, 400, 22);
 
         txtAlamat.setText("jTextField3");
         txtAlamat.addActionListener(new java.awt.event.ActionListener() {
@@ -116,7 +116,7 @@ public class FormAnggota extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtAlamat);
-        txtAlamat.setBounds(100, 70, 290, 22);
+        txtAlamat.setBounds(100, 70, 400, 22);
 
         btnInsert.setText("Insert");
         btnInsert.addActionListener(new java.awt.event.ActionListener() {
@@ -185,7 +185,7 @@ public class FormAnggota extends javax.swing.JFrame {
 
         cboJenisKelamin.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         getContentPane().add(cboJenisKelamin);
-        cboJenisKelamin.setBounds(100, 100, 260, 22);
+        cboJenisKelamin.setBounds(100, 100, 400, 22);
 
         setSize(new java.awt.Dimension(552, 433));
         setLocationRelativeTo(null);
